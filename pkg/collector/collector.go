@@ -37,7 +37,7 @@ type MetricTypeName struct {
 }
 
 type PluginNotFoundError struct {
-	*MetricTypeName
+	MetricTypeName MetricTypeName
 }
 
 func (p *PluginNotFoundError) Error() string {
