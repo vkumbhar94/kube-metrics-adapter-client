@@ -1,6 +1,7 @@
 package collector
 
 import (
+	"fmt"
 	"time"
 
 	autoscalingv2 "k8s.io/api/autoscaling/v2beta2"
