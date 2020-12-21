@@ -1,7 +1,6 @@
 package collector
 
 import (
-	"fmt"
 	"time"
 
 	autoscalingv2 "k8s.io/api/autoscaling/v2beta2"
@@ -37,7 +36,7 @@ type MetricTypeName struct {
 }
 
 type PluginNotFoundError struct {
-	metricTypeName MetricTypeName
+	*MetricTypeName
 }
 
 func (p *PluginNotFoundError) Error() string {
