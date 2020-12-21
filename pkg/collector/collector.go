@@ -34,3 +34,11 @@ type MetricTypeName struct {
 	Type   autoscalingv2.MetricSourceType
 	Metric autoscalingv2.MetricIdentifier
 }
+
+type PluginNotFoundError struct {
+	metricTypeName MetricTypeName
+}
+
+func (p *PluginNotFoundError) Error() string {
+	return fmt.Sprintf("no plugin found for %s", p.metricTypeName)
+}
