@@ -1,6 +1,7 @@
 package collector
 
 import (
+	"fmt"
 	"time"
 
 	autoscalingv2 "k8s.io/api/autoscaling/v2beta2"
@@ -40,5 +41,5 @@ type PluginNotFoundError struct {
 }
 
 func (p *PluginNotFoundError) Error() string {
-	return fmt.Sprintf("no plugin found for %s", p.metricTypeName)
+	return fmt.Sprintf("no plugin found for %s", p.MetricTypeName)
 }
